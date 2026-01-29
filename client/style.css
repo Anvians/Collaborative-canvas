@@ -1,0 +1,74 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    font-family: sans-serif;
+}
+
+#drawingCanvas {
+    display: block;
+    cursor: crosshair; 
+    touch-action: none;
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+}
+
+.toolbar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    pointer-events: auto; 
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+button {
+    padding: 5px 15px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:active {
+    background: #e0e0e0;
+}
+
+.ghost-cursor {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%); 
+    pointer-events: none;
+    transition: top 0.1s linear, left 0.1s linear; 
+    z-index: 50;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.ghost-cursor::after {
+    content: 'User';
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
