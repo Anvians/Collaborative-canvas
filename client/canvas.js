@@ -26,7 +26,11 @@ export class CanvasHandler {
         this.ctx.lineTo(end.x, end.y);
         this.ctx.strokeStyle = style.color;
         this.ctx.lineWidth = 5;
-        this.ctx.lineCap = 'round';
+        
+        this.ctx.lineCap = 'round'; 
+        
+        this.ctx.lineJoin = 'round'; 
+        
         this.ctx.stroke();
     }
 
