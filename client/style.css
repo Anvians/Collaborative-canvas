@@ -4,6 +4,7 @@ html {
     padding: 0;
     overflow: hidden;
     font-family: sans-serif;
+    overscroll-behavior: none;
 }
 
 #drawingCanvas {
@@ -11,9 +12,9 @@ html {
     cursor: crosshair;
     touch-action: none;
     background: white;
+    touch-action: none;
 }
 
-/* Toolbar Updates */
 .toolbar {
     position: absolute;
     top: 20px;
@@ -94,4 +95,74 @@ button.active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: top 0.1s linear, left 0.1s linear;
     z-index: 50;
+}
+
+
+
+
+
+/* MOBILE RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    .toolbar {
+        top: auto;        
+        bottom: 20px;    
+        left: 50%;       
+        transform: translateX(-50%);
+        width: 90%;     
+        max-width: 400px;
+        
+        overflow-x: auto; 
+        white-space: nowrap; 
+        
+        padding: 10px;
+        gap: 15px;
+        border-radius: 50px; 
+        justify-content: flex-start; 
+    }
+
+    .toolbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .toolbar button {
+        padding: 10px 15px;
+        font-size: 1.1rem;
+        flex-shrink: 0; 
+    }
+
+    input[type="range"] {
+        width: 80px; 
+    }
+
+    #user-panel {
+        top: 10px;
+        right: auto;
+        left: 10px;
+        width: auto;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.9);
+    }
+    
+    #user-panel h3 {
+        font-size: 12px;
+        margin: 0;
+        display: inline-block;
+        margin-right: 5px;
+    }
+    
+    #userList {
+        display: inline-flex; 
+        gap: 5px;
+    }
+    
+    #userList li {
+        font-size: 0;
+    }
+    
+    #userList li .user-dot {
+        width: 12px;
+        height: 12px;
+        margin: 0;
+        border: 1px solid #ccc;
+    }
 }
