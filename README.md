@@ -1,4 +1,4 @@
-#  Real-Time Collaborative Drawing Canvas
+# Real-Time Collaborative Drawing Canvas
 
 A full-stack, real-time drawing application where multiple users can draw simultaneously on a shared canvas. Built to demonstrate mastery of **WebSockets**, **HTML5 Canvas API**, and **Distributed State Management**.
 
