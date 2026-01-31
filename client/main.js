@@ -78,7 +78,7 @@ canvasEl.addEventListener('touchmove', moveDraw, { passive: false });
 canvasEl.addEventListener('touchend', endDraw);
 canvasEl.addEventListener('touchcancel', endDraw);
 
-// Socket Listeners ---
+// Socket Listeners 
 
 socket.on('draw_line', (data) => {
     canvasHandler.drawLine(data.start, data.end, data.style);
