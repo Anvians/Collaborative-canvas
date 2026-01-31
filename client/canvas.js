@@ -11,7 +11,6 @@ export class CanvasHandler {
         this.canvas.height = window.innerHeight;
     }
 
-    // Convert screen coordinates to canvas coordinates 
     getCoordinates(event) {
         const rect = this.canvas.getBoundingClientRect();
         return {
@@ -24,13 +23,14 @@ export class CanvasHandler {
         this.ctx.beginPath();
         this.ctx.moveTo(start.x, start.y);
         this.ctx.lineTo(end.x, end.y);
+        
         this.ctx.strokeStyle = style.color;
-        this.ctx.lineWidth = 5;
         
-        this.ctx.lineCap = 'round'; 
+       
+        this.ctx.lineWidth = style.width || 5; 
         
-        this.ctx.lineJoin = 'round'; 
-        
+        this.ctx.lineCap = 'round';
+        this.ctx.lineJoin = 'round'; // Keeps corners smooth
         this.ctx.stroke();
     }
 
